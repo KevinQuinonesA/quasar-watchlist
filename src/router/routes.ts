@@ -4,7 +4,18 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
-    children: [{ path: '', component: () => import('pages/IndexPage.vue') }],
+    children: [
+      {
+        path: '',
+        name: 'list',
+        component: () => import('pages/WatchlistPage.vue'),
+      },
+      {
+        path: 'create',
+        name: 'create',
+        component: () => import('pages/CreateWatchlistItem.vue'),
+      },
+    ],
   },
 
   // Always leave this as last one,
